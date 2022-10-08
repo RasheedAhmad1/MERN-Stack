@@ -1,5 +1,5 @@
 ## MERN Stack
-From very basics HTML, CSS, JS to Deployment
+From very basics HTML, CSS, JS to Deployment of MERN full-stack web apps.
 
 * [HTML](...)
 * [CSS](...)
