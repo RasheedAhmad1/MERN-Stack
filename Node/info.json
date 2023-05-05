@@ -1,0 +1,19 @@
+{
+    "string":"string comment",
+    "name":"John",
+
+    "number":"number comment",
+    "Age":30,
+
+    "object":"object comment",
+    "employee":{"name":"John", "age":30, "city":"New York"},
+
+    "array":"array comment",
+    "employees":["John", 30, "Peter"],
+
+    "boolean":"boolean comment",
+    "Sale":true,
+    
+    "null":"null comment",
+    "Middlename":null
+}
