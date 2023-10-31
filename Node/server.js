@@ -9,20 +9,19 @@ const http = require('http');
 const fs = require('fs');
 
 const hostname = '127.0.0.1';
-// const port = 3000;
 
 // set port number manually
+// const port = 3000;
 // console.log(port);
 
-// pring port number with processing with "dotenv" package
+// print port number by processing the "dotenv" package
 // console.log(`Your port is: ${process.env.PORT}`); // output: undefined
 
-// dotenv package will process the .env file and
-// it's config function to look for the env file to find "port number"
+// dotenv package will process the .env file and it's config function to look for the env file to find "port number"
 const dotenv = require('dotenv');
 dotenv.config();
 const port = process.env.PORT;
-// OR: const port = process.env.PORT || 3000;
+// OR also setting a default fort: const port = process.env.PORT || 3000;
 // console.log(`Your port is: ${port}`); // output: 8626
 
 const server = http.createServer((req, res) => {
@@ -30,31 +29,23 @@ const server = http.createServer((req, res) => {
     // requets object
     console.log(req.url, req.method);
 
-    // response object - three steps
+    // response object (sending the response to the browser) - three steps
     // step-I - set the response header content
     // res.setHeader('Content-Type', 'text/plain'); 
     // text/plain - sending back some plain text
     // text/html - sending back some html
     res.setHeader('Content-Type', 'text/html');
-    // res.write('<p>Hello, again world</p>');
 
     // step-II - write to the server
     // use write() method to write to the response
-    // res.write('Hello world!');
+    // res.write('Hello from Server!');
 
     // step-III - end the response
     // res.end();
 
-    // Sending html ideally
-    // fs.readFile('./views/index.html', (err, data) => {
-    //     if(err) {
-    //         console.log(err);
-    //         res.end();
-    //     } else {
-    //         res.write(data); // for many lines of HTML
-    //         res.end(data); // for one line HTML
-    //     }
-    // });
+    /* ==== Sending HTML ==== */
+    // First set the header to "text/html"
+    // res.write('<p>Hello from the Server</p>');
 
     // Basic Routing
     let path = './views/';
@@ -120,7 +111,7 @@ We set the Content-Type header: res.setHeader('Content-type', 'text/plain');
 and we close the response, adding the content as an argument to end():
 res.end('Hello World\n'); */
 
-/* ==== setHeader() ==== */
+/* ==== setHeader() ==== */ // (meat data about the request)
 /* The response.setHeader(name, value) (Added in v0.4.0) method is an inbuilt application 
 programming interface of the ‘http‘ module which sets a single header value for 
 implicit headers. If this header already exists in the to-be-sent headers, 
@@ -130,7 +121,7 @@ Therefore, response.getHeader() may return non-string values. However,
 the non-string values will be converted to strings for network transmission. 
 NOTE: It does not return any value, instead sets a header.
 Examples:
- Setting up headers
+ Setting up headers 
 I) response.setHeader('Content-Type', 'text/html'); // set as a string
 I) response.setHeader('Set-Cookie', ['type=ninja', 'language=javascript']); // set as an Array
 
